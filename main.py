@@ -25,6 +25,12 @@ from api import add_pixel
 today = datetime.now()
 print(today.strftime("%d/%m/%Y - LoopIt"))
 
-quantity = input("How many kilometers did you run today? ")
+while True:
+    try:
+        quantity = float(input("How many kilometers did you run today? "))
+        break
+    except ValueError:
+        print("Please enter a valid number (e.g., 3.5)")
+
 response = add_pixel(quantity)
 print(response.text)
