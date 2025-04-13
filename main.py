@@ -6,6 +6,7 @@ import os
 from rich.console import Console
 from rich.panel import Panel
 from rich import box
+from reminder import start_reminder
 
 load_dotenv()
 
@@ -26,6 +27,7 @@ if missing:
 from api import add_pixel
 
 console = Console()
+start_reminder()
 
 today = datetime.now()
 console.print(Panel(f"[bold green]{today.strftime('%d/%m/%Y')} - LoopIt[/bold green]", expand=False, box=box.ROUNDED))

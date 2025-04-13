@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from api import add_pixel
 from datetime import datetime
+from reminder import start_reminder
 
 def submit_data():
     try:
@@ -12,6 +13,7 @@ def submit_data():
         messagebox.showerror("Invalid input", "Please enter a valid number (e.g., 3.5)")
 
 app = tk.Tk()
+start_reminder()
 app.title("LoopIt Tracker")
 
 tk.Label(app, text="LoopIt - Habit Tracker", font=("Helvetica", 16)).pack(pady=10)
